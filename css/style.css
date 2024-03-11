@@ -4,7 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fafafa;
+}
+h1,h2,label{
+    color: #fdfdfd;
 }
 
 html, 
@@ -14,7 +16,7 @@ body{
 }
 
 body{
-    background-color: #fafafa;
+    background-color: #fdfdfd;
 }
 
 input:focus{
@@ -26,7 +28,7 @@ input:focus{
     min-height: 80vh;
     margin: 2rem auto;
     display: flex;
-    background-color: #353535;
+    background-color: #2e2e2e;
     box-shadow: rgba(50, 50, 93, 0.5) 0px 13px 27px -5px,
         rgba(0, 0, 0, 0.5) 0px 8px 16px -8px;
 }
@@ -55,7 +57,87 @@ input:focus{
 
 #register-form{
     padding: 2rem;
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
+}
+
+#register-form h2{
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;   
+}
+#register-form p{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #d4d4d4;
+    font-size: 15px;   
+}
+
+.form-control{
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control label{
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+
+.form-control input{
+    border: none;
+    border-bottom: 2px solid #cea347;
+    padding: 8px 0px;
+    background-color: transparent;   
+}
+
+::placeholder{
+  color: #e0e0e0;  
+}
+
+#generate-password{
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    color: #ffffff;
+}
+
+#generate-password:hover{
+    color: #f3c053;
+}
+
+#register-form #generated-password{
+    border: 1px solid #757575;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: #f3c053;
+    text-align: center;
+    display: none;
+}
+
+#generated-password p{
+    color: #fdfdfd;
+}
+
+#register-form input[type="submit"]{
+    margin-top: 1rem;
+    background-color: #8a8a8a;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bolder;
+    color: #fdfdfd;
+    font-size: 15px;
+    transition: 0.4s;
+    max-width: 150px;
+    align-self: flex-end;
+}
+
+#register-form input[type="submit"]:hover{
+    background-color: #f3c053;
+    color: #2e2e2e;
 }

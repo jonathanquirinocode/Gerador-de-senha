@@ -109,7 +109,7 @@ input:focus{
 }
 
 #register-form #generated-password{
-    border: 1px solid #757575;
+    border: 1px solid #f3c053;
     border-radius: 4px;
     font-weight: bold;
     font-size: 1.2rem;
@@ -120,8 +120,52 @@ input:focus{
     display: none;
 }
 
+#register-form button{
+    margin-top: 0.5rem;
+    background-color: #8a8a8a;
+    border: none;
+    padding: 7px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fdfdfd;
+    font-size: 13px;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+#register-form button:hover{
+    background-color: #f3c053;
+    color: #2e2e2e;
+}
+
+
 #generated-password p{
     color: #fdfdfd;
+}
+
+#generate-options{
+    border: 1px solid #757575;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+#generate-options .form-control{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#generate-options label{
+    font-size: 0.8rem;
+}
+
+#generate-options input[type="text"]{
+    max-width: 35px;
+    text-align: center;
+}
+#generate-options button{
+    display: block;
+    margin: 0 auto;
 }
 
 #register-form input[type="submit"]{
@@ -130,15 +174,19 @@ input:focus{
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-weight: bolder;
+    font-weight: bold;
     color: #fdfdfd;
     font-size: 15px;
     transition: 0.4s;
     max-width: 150px;
     align-self: flex-end;
+    border-radius: 2px;
 }
-
 #register-form input[type="submit"]:hover{
     background-color: #f3c053;
     color: #2e2e2e;
+}
+
+.hide{
+    display: none;
 }

@@ -90,6 +90,7 @@ input:focus{
     border-bottom: 2px solid #cea347;
     padding: 8px 0px;
     background-color: transparent;   
+    color: #e0e0e0
 }
 
 ::placeholder{

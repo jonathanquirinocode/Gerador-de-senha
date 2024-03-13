@@ -1,6 +1,14 @@
 //seleção de elementos
 const generatePasswordBtn = document.querySelector("#generate-password");
 const generatedPasswordElement = document.querySelector("#generated-password");
+
+const openCloseGenerateBtn = document.querySelector("#open-generate-password")
+const generateOptionsContainer = document.querySelector("#generate-options");
+const lengthInput = document.querySelector("#length");
+const lettersInput = document.querySelector("#letters");
+const numbersInput = document.querySelector("#numbers");
+const symbolsInput = document.querySelector("#symbols");
+const copyPasswordBtn = document.querySelector("#copy-password");
 //funções
 
 const getLetterLowCase = () => {
@@ -24,13 +32,23 @@ const generatePassword = (getLetterLowCase, getLetterUpperCase, getNumber, getSy
     
     let password = "";
 
-    const passwordLength = 10;
+    const passwordLength = lengthInput.value;
 
-    const generators = [
-        getLetterLowCase,
-        getLetterUpperCase,
-        getNumber, getSymbols
-    ];
+    const generators = [];
+
+    if(lettersInput.checked){
+        generators.push(getLetterLowCase, getLetterUpperCase);
+    };
+
+    if(numbersInput.checked){
+        generators.push(getNumber);
+    }
+    if(symbolsInput.checked){
+        generators.push(getSymbols);
+    }
+    if(generators.length === 0){
+        return
+    }
 
     for (i = 0; i < passwordLength; i = i + generators.length){
         generators.forEach(() => {
@@ -48,12 +66,31 @@ const generatePassword = (getLetterLowCase, getLetterUpperCase, getNumber, getSy
 
 };
 
-
 //eventos
 generatePasswordBtn.addEventListener("click", () =>{
     generatePassword(
         getLetterLowCase,
         getLetterUpperCase,
         getNumber, getSymbols
-    )
+    );
+});
+
+openCloseGenerateBtn.addEventListener("click", () =>{
+    generateOptionsContainer.classList.toggle("hide");
+});
+
+//copiar
+
+copyPasswordBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    const password = generatedPasswordElement.querySelector("h4").innerText;
+
+    navigator.clipboard.writeText(password).then(() => {
+        copyPasswordBtn.innerText = "Senha copiada";
+
+        setTimeout(() => {
+            copyPasswordBtn.innerText = "Copiar";
+        }, 1500);
+    });
 });

@@ -34,13 +34,8 @@
                 <input type="password" id="password" placeholder="Crie uma senha"/>
             </div>
             <p>Precisa de ajudar para criar uma senha segura? 
-                <span id="generate-password">Clique aqui!</span>
+                <span id="open-generate-password">Clique aqui!</span>
             </p>
-            <div id="generated-password">
-                <p>Aqui está a sua senha:</p>
-                <h4></h4>
-                <button id="copy-password">Copiar</button>
-            </div>
             <div id="generate-options" class="hide">
                 <p>Selecione as altereções de senha que você quer fazer.</p>
                 <div class="form-control">
@@ -59,7 +54,12 @@
                     <label for="symbols">Símbolos:</label>
                     <input type="checkbox" id="symbols" name="symbols" value="10">
                 </div>
-                <button id="edit-generated-password">Editar senha</button>
+                <button id="generate-password">Criar senha</button>
+            </div>
+            <div id="generated-password">
+                <p>Aqui está a sua senha:</p>
+                <h4></h4>
+                <button id="copy-password">Copiar</button>
             </div>
             <div class="form-control">
                 <label for="confirmPassword">Confirme a senha:</label>
